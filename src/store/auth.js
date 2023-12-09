@@ -50,9 +50,6 @@ export const useAuthStore = defineStore("auth", {
         async handleRegister(data) {
             this.authErrors = [];
             await this.getToken();
-
-            console.log(data);
-
             try{
                 await axios.post("/register", {
                     name: data.username,
