@@ -1,5 +1,5 @@
 {
-  "name": "frontend_vuetify",
+  "name": "betboost_vuetify",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,28 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@iconify-json/bx": "^1.1.7",
+    "@iconify-json/bxl": "^1.1.7",
+    "@iconify-json/bxs": "^1.1.7",
+    "@iconify-json/mdi": "^1.1.55",
+    "@iconify/vue": "^4.1.1",
     "@mdi/font": "7.0.96",
+    "@vueuse/core": "^10.6.1",
+    "axios": "^1.6.2",
     "core-js": "^3.29.0",
+    "date-fns": "^2.30.0",
     "pinia": "^2.0.0",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "roboto-fontface": "*",
-    "vue": "^3.2.0",
+    "vue": "^3.3.9",
     "vue-router": "^4.0.0",
+    "vue3-apexcharts": "^1.4.4",
+    "vue3-perfect-scrollbar": "^1.6.1",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {
+    "@iconify/tools": "^3.0.6",
+    "@iconify/utils": "^2.1.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.37.0",
     "eslint-plugin-vue": "^9.3.0",

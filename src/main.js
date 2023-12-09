@@ -13,6 +13,14 @@ import { createApp } from 'vue'
 // Plugins
 import { registerPlugins } from '@/plugins'
 
+// Configuration
+import '@/plugins/axios';
+
+import '@/@iconify/icons-bundle'
+import '@core/scss/template/index.scss'
+import '@layouts/styles/index.scss'
+import '@styles/styles.scss'
+
 const app = createApp(App)
 
 registerPlugins(app)
