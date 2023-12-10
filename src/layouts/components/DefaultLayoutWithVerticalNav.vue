@@ -60,7 +60,7 @@ onBeforeMount(async () => {
 
         <VBtn
           class="me-2"
-          href="https://twitter.com/MyBetBoost"
+          href="https://mybetboost.com/go/twitter/"
           target="_blank"
           rel="noopener noreferrer"
           size="small" icon=true color="default" variant="text"
@@ -70,7 +70,7 @@ onBeforeMount(async () => {
 
         <VBtn
           class="me-2"
-          href="https://discord.gg/jCZFzxsfyr"
+          href="https://mybetboost.com/go/discord/"
           target="_blank"
           rel="noopener noreferrer"
           size="small" icon=true color="default" variant="text"
@@ -80,7 +80,7 @@ onBeforeMount(async () => {
 
         <VBtn
           class="me-2"
-          href="https://t.me/+DBF5YT17EV5hZWNk"
+          href="https://mybetboost.com/go/telegram/"
           target="_blank"
           rel="noopener noreferrer"
           size="small" icon=true color="default" variant="text"
