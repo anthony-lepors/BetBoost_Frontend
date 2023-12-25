@@ -129,6 +129,17 @@ watch(props, () => {
     updateValuesFromParent();
 });
 
+const sports = [
+  'Football',
+  'Basket',
+  'Rugby',
+  'Tennis',
+  'Hockey',
+  'Baseball',
+  'Volleyball',
+  // Ajoutez d'autres sports au besoin
+];
+
 </script>
 
 <template>
@@ -136,18 +147,20 @@ watch(props, () => {
     <VRow>
 
         <VCol cols="12" md="3">
-            <VTextField
+            <v-combobox
             v-model="sport"
             label="Sport"
             type="string"
             placeholder="Football"
+            :items="sports"
+            clearable
             />
         </VCol>
 
         <VCol cols="12" md="3">
             <VTextField
                 v-model="bet"
-                label="Paris"
+                label="Pari"
                 type="string"
                 placeholder="Marseille ou nul"
             />
@@ -186,11 +199,13 @@ watch(props, () => {
                             </VCol>
 
                             <VCol cols="12" md="6">
-                                <VTextField
+                                <v-combobox
                                 v-model="sport"
                                 label="Sport"
                                 type="string"
                                 placeholder="Football"
+                                :items="sports"
+                                clearable
                                 />
                             </VCol>
 
@@ -262,7 +277,7 @@ watch(props, () => {
                                 v-model="maxInitialOdd"
                                 label="Cote initiale max"
                                 type="number"
-                                placeholder="2.5"
+                                placeholder="2"
                             />
                             </VCol>
 
@@ -271,7 +286,7 @@ watch(props, () => {
                                 v-model="minAmount"
                                 label="Mise min"
                                 type="number"
-                                placeholder="1.5"
+                                placeholder="10"
                             />
                             </VCol>
 
@@ -280,7 +295,7 @@ watch(props, () => {
                                 v-model="maxAmount"
                                 label="Mise max"
                                 type="number"
-                                placeholder="2.5"
+                                placeholder="50"
                             />
                             </VCol>
 
