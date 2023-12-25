@@ -32,30 +32,128 @@
       maxAmount.value = newFilters.maxAmount;
       startDate.value = newFilters.startDate;
       endDate.value = newFilters.endDate;
-    };    
+    };
+
+    import { useRoute } from 'vue-router'
+    const route = useRoute()
+    const activeTab = ref(route.params.tab)
+
+    // tabs
+    const tabs = [
+        {
+            title: 'Mise max 10€',
+            icon: 'mdi-podium-gold',
+            tab: 'gold',
+        },
+        {
+            title: 'Mise max >10€',
+            icon: 'mdi-podium-silver',
+            tab: 'silver',
+        },
+        {
+            title: 'Tout',
+            icon: 'mdi-podium',
+            tab: 'all',
+        },
+    ];
 </script>
 
 <template>
   <div>
-    <BetsDashboard
-      :bet="bet"
-      :sport="sport"
-      :match="match"
-      :competition="competition"
-      :status="status"
-      :bookmaker="bookmaker"
-      :minBoostedOdd="minBoostedOdd"
-      :maxBoostedOdd="maxBoostedOdd"
-      :minInitialOdd="minInitialOdd"
-      :maxInitialOdd="maxInitialOdd"
-      :minAmount="minAmount"
-      :maxAmount="maxAmount"
-      :startDate="startDate"
-      :endDate="endDate"
+    <VTabs
+      v-model="activeTab"
+      show-arrows
+    >
+      <VTab
+        v-for="item in tabs"
+        :key="item.icon"
+        :value="item.tab"
+      >
+        <VIcon
+          size="20"
+          start
+          :icon="item.icon"
+        />
+        {{ item.title }}
+      </VTab>
+    </VTabs>
+    <VDivider />
 
-      :editBookmaker="true"
-      :editAmount="true"
-      @updateFilters="updateFilters"
-    />
+    <VWindow
+      v-model="activeTab"
+      class="mt-5 disable-tab-transition"
+    >
+      <!-- First tab -->
+      <VWindowItem value="gold">
+        <BetsDashboard
+            :bet="bet"
+            :sport="sport"
+            :match="match"
+            :competition="competition"
+            :status="status"
+            :bookmaker="bookmaker"
+            :minBoostedOdd="minBoostedOdd"
+            :maxBoostedOdd="maxBoostedOdd"
+            :minInitialOdd="minInitialOdd"
+            :maxInitialOdd="maxInitialOdd"
+            :minAmount="0"
+            :maxAmount="10"
+            :startDate="startDate"
+            :endDate="endDate"
+
+            :editBookmaker="true"
+            :editAmount="false"
+            @updateFilters="updateFilters"
+        />
+      </VWindowItem>
+
+      <!-- Second tab -->
+      <VWindowItem value="silver">
+        <BetsDashboard
+            :bet="bet"
+            :sport="sport"
+            :match="match"
+            :competition="competition"
+            :status="status"
+            :bookmaker="bookmaker"
+            :minBoostedOdd="minBoostedOdd"
+            :maxBoostedOdd="maxBoostedOdd"
+            :minInitialOdd="minInitialOdd"
+            :maxInitialOdd="maxInitialOdd"
+            :minAmount="10"
+            :maxAmount="10000"
+            :startDate="startDate"
+            :endDate="endDate"
+
+            :editBookmaker="true"
+            :editAmount="false"
+            @updateFilters="updateFilters"
+        />
+      </VWindowItem>
+
+      <!-- Third tab -->
+      <VWindowItem value="all">
+        <BetsDashboard
+            :bet="bet"
+            :sport="sport"
+            :match="match"
+            :competition="competition"
+            :status="status"
+            :bookmaker="bookmaker"
+            :minBoostedOdd="minBoostedOdd"
+            :maxBoostedOdd="maxBoostedOdd"
+            :minInitialOdd="minInitialOdd"
+            :maxInitialOdd="maxInitialOdd"
+            :minAmount="minAmount"
+            :maxAmount="maxAmount"
+            :startDate="startDate"
+            :endDate="endDate"
+
+            :editBookmaker="true"
+            :editAmount="true"
+            @updateFilters="updateFilters"
+        />
+      </VWindowItem>
+    </VWindow>
 </div>
 </template>
