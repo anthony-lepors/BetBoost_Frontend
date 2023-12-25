@@ -120,7 +120,7 @@
             :maxBoostedOdd="maxBoostedOdd"
             :minInitialOdd="minInitialOdd"
             :maxInitialOdd="maxInitialOdd"
-            :minAmount="10"
+            :minAmount="11"
             :maxAmount="10000"
             :startDate="startDate"
             :endDate="endDate"
