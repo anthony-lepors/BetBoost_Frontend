@@ -4,7 +4,7 @@ import avatar1 from '@images/avatars/avatar-01.jpg'
 import { useAuthStore } from '@/store/auth';
 const authStore = useAuthStore();
 
-const faqLink = 'https://mybetboost.com/faq';
+const faqLink = 'https://mybetboost.com/faq-cotes-boostees/';
 
 const redirectToExternalSite = (link) => {
   // Ouvrir le lien dans un nouvel onglet
