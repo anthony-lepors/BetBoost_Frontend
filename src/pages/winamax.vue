@@ -2,6 +2,33 @@
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
 
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées Winamax";
+    const pageDescription = "Découvrez les cotes boostées de Winamax sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-winamax.png";
+
+    const pageKeywords = [
+      "historique cotes boostées winamax",
+      "historique cote boostée winamax",
+      "historiques cotes boostées winamax",
+      "historiques cote boostée winamax",
+      "statistique cotes boostées winamax",
+      "statistique cote boostée winamax",
+      "statistiques cotes boostées winamax",
+      "statistiques cote boostée winamax",
+      "cote boostée winamax",
+      "cotes boostées winamax",
+      "grosse cote boostée winamax",
+      "grosses cotes boostées winamax",
+      "gcb winamax",
+      "cb winamax",
+      "cotes boostées winamax aujourd'hui",
+      "grosses cotes boostées winamax aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
+
     const bet = ref('');
     const sport = ref('');
     const match = ref('');

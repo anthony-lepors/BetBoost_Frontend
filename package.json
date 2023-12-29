@@ -15,6 +15,7 @@
     "@iconify-json/mdi": "^1.1.55",
     "@iconify/vue": "^4.1.1",
     "@mdi/font": "7.0.96",
+    "@unhead/vue": "^1.8.9",
     "@vueuse/core": "^10.6.1",
     "axios": "^1.6.2",
     "core-js": "^3.29.0",

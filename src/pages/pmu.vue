@@ -1,6 +1,28 @@
 <script setup>
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées PMU";
+    const pageDescription = "Découvrez les cotes boostées de PMU sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-pmu.png";
+
+    const pageKeywords = [
+      "historique cotes boostées pmu",
+      "historique cote boostée pmu",
+      "historiques cotes boostées pmu",
+      "historiques cote boostée pmu",
+      "statistique cotes boostées pmu",
+      "statistique cote boostée pmu",
+      "statistiques cotes boostées pmu",
+      "statistiques cote boostée pmu",
+      "cote boostée pmu",
+      "cotes boostées pmu",
+      "cb pmu",
+      "cotes boostées pmu aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
 
     const bet = ref('');
     const sport = ref('');
@@ -42,12 +64,12 @@
     // tabs
     const tabs = [
         {
-            title: 'Grosses Cotes Boostées',
+            title: 'Cotes Boostées 10€',
             icon: 'mdi-podium-gold',
             tab: 'gold',
         },
         {
-            title: 'Cotes Boostées',
+            title: 'Cotes Boostées >10€',
             icon: 'mdi-podium-silver',
             tab: 'silver',
         },
@@ -99,7 +121,7 @@
             :minInitialOdd="minInitialOdd"
             :maxInitialOdd="maxInitialOdd"
             :minAmount="0"
-            :maxAmount="25"
+            :maxAmount="10"
             :startDate="startDate"
             :endDate="endDate"
 
@@ -122,7 +144,7 @@
             :maxBoostedOdd="maxBoostedOdd"
             :minInitialOdd="minInitialOdd"
             :maxInitialOdd="maxInitialOdd"
-            :minAmount="50"
+            :minAmount="11"
             :maxAmount="10000"
             :startDate="startDate"
             :endDate="endDate"

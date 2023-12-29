@@ -1,6 +1,35 @@
 <script setup>
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées PSEL";
+    const pageDescription = "Découvrez les cotes boostées de PSEL sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-psel.png";
+
+    const pageKeywords = [
+      "historique cotes boostées psel",
+      "historique cotes boostées parions sport",
+      "historique cote boostée psel",
+      "historiques cotes boostées psel",
+      "historiques cote boostée psel",
+      "statistique cotes boostées psel",
+      "statistique cote boostée psel",
+      "statistiques cotes boostées psel",
+      "statistiques cotes boostées parions sport",
+      "statistiques cote boostée psel",
+      "cote boostée psel",
+      "cotes boostées psel",
+      "cote boostée parions sport",
+      "cotes boostées parions sport",
+      "cb flash psel",
+      "cb flash psel aujourd'hui",
+      "time boost psel",
+      "time boost psel aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
+
 
     const bet = ref('');
     const sport = ref('');

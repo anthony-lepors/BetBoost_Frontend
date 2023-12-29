@@ -2,6 +2,29 @@
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
 
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées Betclic";
+    const pageDescription = "Découvrez les cotes boostées de Betclic sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-betclic.png";
+
+    const pageKeywords = [
+      "historique cotes boostées betclic",
+      "historique cote boostée betclic",
+      "historiques cotes boostées betclic",
+      "historiques cote boostée betclic",
+      "statistique cotes boostées betclic",
+      "statistique cote boostée betclic",
+      "statistiques cotes boostées betclic",
+      "statistiques cote boostée betclic",
+      "cote boostée betclic",
+      "cotes boostées betclic",
+      "flash boost betclic",
+      "flash boost betclic aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
+
     const bet = ref('');
     const sport = ref('');
     const match = ref('');
@@ -41,7 +64,7 @@
     // tabs
     const tabs = [
         {
-          title: 'FlashBoosts',
+          title: 'Flash Boost',
           icon: 'mdi-podium-gold',
           tab: 'gold',
         },

@@ -1,6 +1,28 @@
 <script setup>
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées";
+    const pageDescription = "Découvrez BetBoost - L'application des cotes boostées pour les paris sportifs. Historique et statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/BetBoost_icon.png";
+
+    const pageKeywords = [
+      "BetBoost", 
+      "cotes boostées", 
+      "cote boostée", 
+      "statistique cotes boostées", 
+      "statistique cote boostée", 
+      "statistiques cotes boostées", 
+      "statistiques cote boostée", 
+      "historique cote boostée",
+      "historique cotes boostées",
+      "historiques cote boostée",
+      "historiques cotes boostées",
+      "application cotes boostées",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
 
     const bet = ref('');
     const sport = ref('');

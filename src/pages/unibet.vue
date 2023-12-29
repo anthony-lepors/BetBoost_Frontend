@@ -1,6 +1,28 @@
 <script setup>
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées Unibet";
+    const pageDescription = "Découvrez les cotes boostées de Unibet sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-unibet.png";
+
+    const pageKeywords = [
+      "historique cotes boostées unibet",
+      "historique cote boostée unibet",
+      "historiques cotes boostées unibet",
+      "historiques cote boostée unibet",
+      "statistique cotes boostées unibet",
+      "statistique cote boostée unibet",
+      "statistiques cotes boostées unibet",
+      "statistiques cote boostée unibet",
+      "cote boostée unibet",
+      "cotes boostées unibet",
+      "flash bet unibet",
+      "flash bet unibet aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
 
     const bet = ref('');
     const sport = ref('');
@@ -33,7 +55,6 @@
       startDate.value = newFilters.startDate;
       endDate.value = newFilters.endDate;
     };    
-    
     
     import { useRoute } from 'vue-router'
     const route = useRoute()

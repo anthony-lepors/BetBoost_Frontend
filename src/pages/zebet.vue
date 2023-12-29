@@ -1,6 +1,28 @@
 <script setup>
     import BetsDashboard from '@/views/pages/bookmakers/BetsDashboard.vue';
     import { ref } from 'vue';
+    import { generateSeoMeta } from '@/services/seo';
+
+    const pageTitle = "Statistiques Cotes Boostées ZeBet";
+    const pageDescription = "Découvrez les cotes boostées de ZeBet sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-zebet.png";
+
+    const pageKeywords = [
+      "historique cotes boostées zebet",
+      "historique cote boostée zebet",
+      "historiques cotes boostées zebet",
+      "historiques cote boostée zebet",
+      "statistique cotes boostées zebet",
+      "statistique cote boostée zebet",
+      "statistiques cotes boostées zebet",
+      "statistiques cote boostée zebet",
+      "cote boostée zebet",
+      "cotes boostées zebet",
+      "super cote zebet",
+      "cotes boostées zebet aujourd'hui",
+    ];
+
+    generateSeoMeta(pageTitle, pageDescription, pageImage, pageKeywords);
 
     const bet = ref('');
     const sport = ref('');
@@ -34,7 +56,6 @@
       endDate.value = newFilters.endDate;
     };    
     
-    
     import { useRoute } from 'vue-router'
     const route = useRoute()
     const activeTab = ref(route.params.tab)
@@ -42,9 +63,14 @@
     // tabs
     const tabs = [
         {
-            title: 'Tout',
-            icon: 'mdi-podium',
-            tab: 'all',
+          title: 'Super Cote 10€',
+          icon: 'mdi-podium-gold',
+          tab: 'gold',
+        },
+        {
+          title: 'Tout',
+          icon: 'mdi-podium',
+          tab: 'all',
         },
     ];
 
@@ -76,6 +102,29 @@
       class="mt-5 disable-tab-transition"
     >
       <!-- First tab -->
+      <VWindowItem value="gold">
+        <BetsDashboard
+            :bet="bet"
+            :sport="sport"
+            :match="match"
+            :competition="competition"
+            :status="status"
+            :bookmaker="'ZeBet'"
+            :minBoostedOdd="minBoostedOdd"
+            :maxBoostedOdd="maxBoostedOdd"
+            :minInitialOdd="minInitialOdd"
+            :maxInitialOdd="maxInitialOdd"
+            :minAmount="0"
+            :maxAmount="10"
+            :startDate="startDate"
+            :endDate="endDate"
+
+            :editBookmaker="false"
+            :editAmount="false"
+            @updateFilters="updateFilters"
+        />
+      </VWindowItem>
+
       <VWindowItem value="all">
         <BetsDashboard
             :bet="bet"
