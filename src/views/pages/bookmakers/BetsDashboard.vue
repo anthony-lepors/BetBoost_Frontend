@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+    import { useRoute } from 'vue-router';
 
     import BetTable from '@/views/pages/bookmakers/BetTable.vue'
     import BetFilter from '@/views/pages/bookmakers/BetFilter.vue'
@@ -27,6 +28,9 @@
     const emit = defineEmits();
     const statsData = ref(null);
 
+    const route = useRoute();
+    const currentRouteName = route.name === 'Home' ? '' : route.name;
+
     const updateFilters = (newFilters) => {
         // Émettre l'événement vers le composant parent
         emit('updateFilters', newFilters);
@@ -43,11 +47,12 @@
     <VCol cols="12" v-if="statsData">
       <BetStats 
           :betStats="statsData"
+          :title="`Statistiques des cotes boostées ${currentRouteName || ''}`"
       />
     </VCol>
 
     <VCol cols="12">
-      <VCard title="Filtrer les pronostics">
+      <VCard :title="`Filtrer les cotes boostées ${currentRouteName || ''}`">
         <VCardText>
             <BetFilter 
                 :bet="bet"
@@ -74,9 +79,9 @@
     </VCol>
 
     <VCol cols="12">
-      <VCard title="Pronostics">
+      <VCard :title="`Historique de toutes les cotes boostées ${currentRouteName || ''}`">
         <VCardText>
-          Liste de tous les pronostics.
+          Ci-dessous vous retrouverez l'historique de toutes les cotes boostées {{ currentRouteName || '' }} jouées par BetBoost.
         </VCardText>
         <BetTable 
             :bet="bet"

@@ -13,6 +13,7 @@ import imgBoost from '@images/cards/boost-info.png'
 
 const props = defineProps([
     'betStats',
+    'title',
 ]);
 
 </script>
@@ -26,12 +27,12 @@ const props = defineProps([
             order="2"
             order-md="1"
         >
+        <!-- GRAPHIQUE -->
         <ApexGraph
             :data="betStats?.data.bankroll"
             :categories="betStats?.data.date"
 
         />  
-        <!-- GRAPHIQUE -->
         </VCol>
         <VCol
             cols="12"
@@ -40,6 +41,11 @@ const props = defineProps([
             order="1"
             order-md="2"
             >
+            <VRow>
+                <VCol cols="12" class="text-center">
+                    <h1 class="text-h1 mt-4 text-subtitle-1"> {{title}} </h1>
+                </VCol>
+            </VRow>
             <VRow>
                 <VCol
                     cols="12"
