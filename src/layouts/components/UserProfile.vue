@@ -72,7 +72,7 @@ const redirectToExternalSite = (link) => {
           <VDivider v-if="authStore.user" class="my-2" />
 
           <!-- 👉 Login -->
-          <VListItem v-if="!authStore.user" to="/login">
+          <VListItem v-if="!authStore.user" :to="{ name: 'Login' }">
             <template #prepend>
               <VIcon
                 class="me-2"
@@ -85,7 +85,7 @@ const redirectToExternalSite = (link) => {
           </VListItem>
 
           <!-- 👉 Register -->
-          <VListItem v-if="!authStore.user" to="/register">
+          <VListItem v-if="!authStore.user" :to="{ name: 'Register' }">
             <template #prepend>
               <VIcon
                 class="me-2"
@@ -98,7 +98,7 @@ const redirectToExternalSite = (link) => {
           </VListItem>
 
           <!-- 👉 Profile -->
-          <VListItem v-if="authStore.user" to="/account">
+          <VListItem v-if="authStore.user" :to="{ name: 'Account' }">
             <template #prepend>
               <VIcon
                 class="me-2"

@@ -119,7 +119,7 @@ onBeforeMount(async () => {
           title: 'Winamax',
           icon: 'mdi-alpha-w-circle',
           // img: '/src/assets/images/icons/logo/ubuntu.png',
-          to: '/winamax',
+          to: { name: 'Winamax' },
         }"
       />
 
@@ -127,7 +127,7 @@ onBeforeMount(async () => {
         :item="{
           title: 'Betclic',
           icon: 'mdi-alpha-b-circle',
-          to: '/betclic',
+          to: { name: 'Betclic' },
         }"
       />
 
@@ -135,7 +135,7 @@ onBeforeMount(async () => {
         :item="{
           title: 'Unibet',
           icon: 'mdi-alpha-u-circle',
-          to: '/unibet',
+          to: { name: 'Unibet' },
         }"
       />
 
@@ -144,7 +144,7 @@ onBeforeMount(async () => {
           title: 'Parions Sport en Ligne',
           icon: 'mdi-alpha-f-circle',
           // img: '/src/assets/images/icons/logo/ubuntu.png',
-          to: '/parions-sport-en-ligne',
+          to: { name: 'Parions Sport En Ligne' },
         }"
       />
 
@@ -153,7 +153,7 @@ onBeforeMount(async () => {
           title: 'ZeBet',
           icon: 'mdi-alpha-z-circle',
           // img: '/src/assets/images/icons/logo/ubuntu.png',
-          to: '/zebet',
+          to: { name: 'ZeBet' },
         }"
       />
 
@@ -162,7 +162,7 @@ onBeforeMount(async () => {
           title: 'PMU',
           icon: 'mdi-alpha-p-circle',
           // img: '/src/assets/images/icons/logo/ubuntu.png',
-          to: '/pmu',
+          to: { name: 'PMU' },
         }"
       />
 
@@ -176,7 +176,7 @@ onBeforeMount(async () => {
         :item="{
           title: 'Profil',
           icon: 'mdi-account-cog-outline',
-          to: '/account',
+          to: { name: 'Account' },
         }"
       />
       <VerticalNavLink v-if="authStore.user"
@@ -190,14 +190,14 @@ onBeforeMount(async () => {
         :item="{
           title: 'Se connecter',
           icon: 'bx-log-in',
-          to: '/login',
+          to: { name: 'Login' },
         }"
       />
       <VerticalNavLink v-if="!authStore.user"
         :item="{
           title: 'Créer un compte',
           icon: 'mdi-account-plus',
-          to: '/register',
+          to: { name: 'Register' },
         }"
       />
     </template>

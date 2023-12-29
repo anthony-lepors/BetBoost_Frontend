@@ -119,7 +119,7 @@ const isPasswordVisible = ref(false)
               <span>Vous avez déjà un compte ?</span>
               <RouterLink
                 class="text-primary ms-2"
-                to="/login"
+                :to="{ name: 'Login' }"
               >
                 Se connecter
               </RouterLink>

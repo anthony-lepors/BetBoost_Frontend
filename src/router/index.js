@@ -18,26 +18,32 @@ const routes = [
       },
       {
         path: 'winamax',
+        name: 'Winamax',
         component: () => import('@/pages/winamax.vue'),
       },
       {
         path: 'betclic',
+        name: 'Betclic',
         component: () => import('@/pages/betclic.vue'),
       },
       {
         path: 'unibet',
+        name: 'Unibet',
         component: () => import('@/pages/unibet.vue'),
       },
       {
         path: 'parions-sport-en-ligne',
+        name: 'Parions Sport En Ligne',
         component: () => import('@/pages/parions-sport-en-ligne.vue'),
       },
       {
         path: 'zebet',
+        name: 'ZeBet',
         component: () => import('@/pages/zebet.vue'),
       },
       {
         path: 'pmu',
+        name: 'PMU',
         component: () => import('@/pages/pmu.vue'),
       },
       {
@@ -56,18 +62,22 @@ const routes = [
     children: [
       {
         path: 'login',
+        name: 'Login',
         component: () => import('@/pages/auth/login.vue'),
       },
       {
         path: 'register',
+        name: 'Register',
         component: () => import('@/pages/auth/register.vue'),
       },
       {
         path: 'forgot-password',
+        name: 'ForgotPassword',
         component: () => import('@/pages/auth/forgot-password.vue'),
       },
       {
         path: 'password-reset/:token',
+        name: 'ResetPassword',
         component: () => import('@/pages/auth/reset-password.vue'),
       },
     ],
@@ -75,6 +85,7 @@ const routes = [
   {
     // Route wildcard pour capturer toutes les autres routes non définies
     path: '/:pathMatch(.*)*',
+    name: 'NotFound',
     redirect: { name: 'Home' }, // Redirige vers la route avec le nom 'Home'
   },
 ]

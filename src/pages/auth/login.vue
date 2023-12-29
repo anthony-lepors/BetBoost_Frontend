@@ -31,7 +31,7 @@ const isPasswordVisible = ref(false)
           </div>
         </template>
 
-        <router-link to="/">
+        <router-link :to="{ name: 'Home' }">
           <VCardTitle class="text-2xl font-weight-bold">
             BetBoost
           </VCardTitle>
@@ -83,7 +83,7 @@ const isPasswordVisible = ref(false)
 
                 <RouterLink
                   class="text-primary ms-2 mb-1"
-                  to="/forgot-password"
+                  :to="{ name: 'ForgotPassword' }"
                 >
                   Mot de passe oublié ?
                 </RouterLink>
@@ -106,7 +106,7 @@ const isPasswordVisible = ref(false)
               <span>Nouveau chez BetBoost?</span>
               <RouterLink
                 class="text-primary ms-2"
-                to="/register"
+                :to="{ name: 'Register' }"
               >
                 Créer un compte
               </RouterLink>

@@ -27,7 +27,7 @@ const form = ref({
           </div>
         </template>
 
-        <router-link to="/">
+        <router-link :to="{ name: 'Home' }">
           <VCardTitle class="text-2xl font-weight-bold">
             BetBoost
           </VCardTitle>
