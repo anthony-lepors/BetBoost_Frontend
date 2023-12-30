@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Public -->
+    <url>
+        <loc>https://app.mybetboost.com/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/winamax/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/betclic/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/unibet/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/parions-sport-en-ligne/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/pmu/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/zebet/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Authenticated -->
+    <url>
+        <loc>https://app.mybetboost.com/account/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Authentication -->
+    <url>
+        <loc>https://app.mybetboost.com/login/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/register/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/forgot-password/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://app.mybetboost.com/password-reset/</loc>
+        <lastmod>2023-12-30T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
