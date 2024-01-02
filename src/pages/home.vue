@@ -3,7 +3,7 @@
     import { ref } from 'vue';
     import { generateSeoMeta } from '@/services/seo';
 
-    const pageTitle = "Statistiques Cotes Boostées";
+    const pageTitle = "Historique et statistiques Cotes Boostées";
     const pageDescription = "Découvrez BetBoost - L'application des cotes boostées pour les paris sportifs. Historique et statistiques exclusives sur les paris boostés.";
     const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/BetBoost_icon.png";
 

@@ -4,8 +4,8 @@
 
     import { generateSeoMeta } from '@/services/seo';
 
-    const pageTitle = "Statistiques Cotes Boostées Winamax";
-    const pageDescription = "Découvrez les cotes boostées de Winamax sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageTitle = "Hitorique des Cotes Boostées Winamax";
+    const pageDescription = "Retrouvez l'historique et les statistiques des grosses cotes boostées Winamax sur BetBoost. Application paris sportifs boostés !";
     const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-winamax.png";
 
     const pageKeywords = [

@@ -3,8 +3,8 @@
     import { ref } from 'vue';
     import { generateSeoMeta } from '@/services/seo';
 
-    const pageTitle = "Statistiques Cotes Boostées ZeBet";
-    const pageDescription = "Découvrez les cotes boostées de ZeBet sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageTitle = "Historique des Cotes Boostées ZEbet";
+    const pageDescription = "Retrouvez l'historique et les statistiques des cotes boostées (Super Cotes) ZEbet sur BetBoost. Application paris sportifs boostés !";
     const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-zebet.png";
 
     const pageKeywords = [

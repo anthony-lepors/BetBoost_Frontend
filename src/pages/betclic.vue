@@ -4,8 +4,8 @@
 
     import { generateSeoMeta } from '@/services/seo';
 
-    const pageTitle = "Statistiques Cotes Boostées Betclic";
-    const pageDescription = "Découvrez les cotes boostées de Betclic sur BetBoost, l'application dédiée aux paris sportifs. Profitez d'un historique et de statistiques exclusives sur les paris boostés.";
+    const pageTitle = "Historique des Cotes Boostées Betclic";
+    const pageDescription = "Retrouvez l'historique et les statistiques des cotes boostées (Flash Boost) Betclic sur BetBoost. Application paris sportifs boostés !";
     const pageImage = "https://mybetboost.com/wp-content/uploads/2023/11/betboost-betclic.png";
 
     const pageKeywords = [
