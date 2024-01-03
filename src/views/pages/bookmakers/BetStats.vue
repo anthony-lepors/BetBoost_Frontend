@@ -1,5 +1,6 @@
 <script setup>
-// import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, onMounted   } from 'vue';
+import { sub, startOfYear, differenceInDays, parseISO } from 'date-fns';
 
 // Components
 import CardStatisticsVertical from '@/@core/components/cards/CardStatisticsVertical.vue';
@@ -14,26 +15,126 @@ import imgBoost from '@images/cards/boost-info.png'
 const props = defineProps([
     'betStats',
     'title',
+    'startDate',
 ]);
+
+const emit = defineEmits();
+
+// const timeSelection = ref('ytd');
+const timeSelection = ref(props.startDate === null ? null : 'ytd');
+
+const timeButtons = [
+  { value: 'week', label: '1w' },
+  { value: 'month', label: '1m' },
+  { value: 'year', label: '1y' },
+  { value: 'ytd', label: 'ytd' },
+  { value: 'all', label: 'tout' },
+];
+
+const updateTime = (selection) => {
+    let selectedTime;
+
+    // console.log('selection : ', selection);
+
+    switch (selection) {
+        case 'week':
+        selectedTime = sub(new Date(), { weeks: 1 });
+        break;
+        case 'month':
+        selectedTime = sub(new Date(), { months: 1 });
+        break;
+        case 'year':
+        selectedTime = sub(new Date(), { years: 1 });
+        break;
+        case 'ytd':
+        selectedTime = startOfYear(new Date());
+        break;
+        case 'all':
+        selectedTime = null; // Pas de valeur
+        break;
+        default:
+        selectedTime = null;
+    }
+
+    // Émettez la mise à jour de la prop selectedTime
+    emit('update:selectedTime', selectedTime);
+
+    return selectedTime;
+};
+
+const determinePeriod = (date) => {
+    if (date === null) {
+        return 'all';
+    }
+
+    if (!(date instanceof Date)) {
+        date = parseISO(date);
+    }
+
+    const currentDate = new Date();
+    const daysDifference = differenceInDays(currentDate, date);
+    const dayOfTheYear = differenceInDays(date, startOfYear(date));
+
+    if (daysDifference === 7) {
+        return 'week';
+    } else if (daysDifference === 31) {
+        return 'month';
+    } else if (daysDifference === 365) {
+        return 'year';
+    } else if (daysDifference < 365 && dayOfTheYear === 0) {
+        return 'ytd';
+    } else {
+        return 'null';
+    }
+};
+
+const startDateFiltered = computed(() => props.startDate);
+
+onMounted(() => {  
+    // Utilisez la fonction updateTime pour obtenir la nouvelle valeur de selectedTime
+    updateTime(timeSelection.value);
+});
+
+
+// Mise à jour de la prop startDate
+watch(startDateFiltered, (nouvelleValeur) => {
+    timeSelection.value = determinePeriod(nouvelleValeur);
+});
 
 </script>
 
 <template>
-
     <VRow>
+        <!-- GRAPHIQUE -->
         <VCol
             cols="12"
             md="8"
             order="2"
             order-md="1"
         >
-        <!-- GRAPHIQUE -->
-        <ApexGraph
-            :data="betStats?.data.bankroll"
-            :categories="betStats?.data.date"
 
-        />  
+            <ApexGraph
+                :data="betStats?.data.bankroll"
+                :categories="betStats?.data.date"
+
+            />  
+
+            <v-btn-toggle
+                v-model="timeSelection"
+                rounded="2"
+                color="primary"
+                group
+                >
+
+                <v-btn v-for="button in timeButtons" :value="button.value" @click="updateTime(button.value)">
+                    {{ button.label }}
+                </v-btn>
+
+            </v-btn-toggle>
+
         </VCol>
+
+        <!-- STATS -->
         <VCol
             cols="12"
             sm="8"

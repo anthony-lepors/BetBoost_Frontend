@@ -40,6 +40,11 @@
       // Handle the updated stats data here
       statsData.value = newStatsData;
     };
+
+    const updateSelectedTime = (newSelectedTime) => {
+      // Émettre l'événement vers le composant parent avec la nouvelle valeur de temps
+      emit('updateStartDate', newSelectedTime);
+    };
 </script>
 
 <template>
@@ -48,6 +53,8 @@
       <BetStats 
           :betStats="statsData"
           :title="`Statistiques des cotes boostées ${currentRouteName || ''}`"
+          :startDate="startDate"
+          @update:selectedTime="updateSelectedTime"
       />
     </VCol>
 

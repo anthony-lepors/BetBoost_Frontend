@@ -55,6 +55,10 @@
       startDate.value = newFilters.startDate;
       endDate.value = newFilters.endDate;
     };    
+
+    const updateStartDate = (newSelectedTime) => {
+      startDate.value = newSelectedTime;
+    };
     
     import { useRoute } from 'vue-router'
     const route = useRoute()
@@ -127,6 +131,7 @@
             :editBookmaker="false"
             :editAmount="false"
             @updateFilters="updateFilters"
+            @updateStartDate="updateStartDate"
         />
       </VWindowItem>
 
@@ -151,6 +156,7 @@
             :editBookmaker="false"
             :editAmount="false"
             @updateFilters="updateFilters"
+            @updateStartDate="updateStartDate"
         />
       </VWindowItem>
 
@@ -175,6 +181,7 @@
             :editBookmaker="false"
             :editAmount="true"
             @updateFilters="updateFilters"
+            @updateStartDate="updateStartDate"
         />
       </VWindowItem>
     </VWindow>
